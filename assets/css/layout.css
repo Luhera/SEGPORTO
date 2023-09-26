@@ -76,6 +76,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  border: 20px solid #391BB0;
   
 }
 
@@ -83,8 +84,7 @@
   width: 80%; /* Defina a largura do mapa conforme necessário */
   height: auto; /* A altura será ajustada automaticamente para manter a proporção */
   max-width: 600px; /* Defina um valor máximo para a largura do mapa, se desejar */
-  border: 1px solid #ccc; /* Adicione uma borda, se desejar */
-  border-radius: 5px; /* Adicione borda arredondada, se desejar */
+
 }
 
 
