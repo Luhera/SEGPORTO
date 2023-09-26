@@ -19,6 +19,12 @@
 
 	<!-- Título da aba do navegador -->
 	<title>SEGPORTO</title>
+
+	<!-- manifest e service-worker -->
+	<meta name="description" content="SEGPORTO">
+	<link rel="manifest" href="manifest.json">
+
+
 </head>
 
 <!-- Conteúdo apresentado na tela. -->
@@ -75,12 +81,15 @@
 
 	<!-- Importação do arquivo JavaScript. -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
+
+
 	<script>
 		function ligarParaEmergencia() {
 		  window.location.href = 'tel:190';
 		}
-	  </script>
-	  <script>
+	</script>
+
+	<script>
 		function acessarCamera() {
 		  navigator.mediaDevices.getUserMedia({ video: true })
 			.then(function (stream) {
@@ -90,6 +99,23 @@
 			  console.error('Erro ao acessar a câmera: ' + error);
 			});
 		}
-	  </script>
+	</script>
+
+	<script>
+    let newWorker;
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(reg => {
+        reg.addEventListener('updatefound', () => {
+          newWorker = reg.installing;
+        });
+      });
+      let refreshing;
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
+      });
+    }
+  	</script>
 	
 </body>
