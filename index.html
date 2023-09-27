@@ -54,6 +54,7 @@
 			</div>
 
 			<div class="conteudo-principal-escrito">
+				<input type="file" accept="image/*" capture="camera" id="captureInput" style="display: none;">
 				<img class="immagem-button" src="assets/Img/icons-01.png" alt="">
 				<button class="button-principal"
 				onclick="acessarCamera()">Relatar Incidentes	</button>		
@@ -90,46 +91,23 @@
 		}
 	</script>
 
-	<script>
-		function acessarCamera() {
-			// Verifica se o navegador suporta o getUserMedia (acesso à câmera).
-			if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-			// Solicita permissão para acessar a câmera.
-			navigator.mediaDevices.getUserMedia({ video: true })
-				.then(function (stream) {
-				// Cria um elemento de vídeo para exibir o feed da câmera.
-				var videoElement = document.createElement('video');
-				videoElement.srcObject = stream;
-				document.body.appendChild(videoElement);
-
-				// Cria um botão para tirar uma foto.
-				var captureButton = document.createElement('button');
-				captureButton.textContent = 'Tirar Foto';
-				document.body.appendChild(captureButton);
-
-				// Quando o botão de captura for clicado, tira uma foto.
-				captureButton.addEventListener('click', function () {
-					var canvas = document.createElement('canvas');
-					var context = canvas.getContext('2d');
-					canvas.width = videoElement.videoWidth;
-					canvas.height = videoElement.videoHeight;
-					context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-					
-					// Agora você pode fazer algo com a imagem, como enviá-la para um servidor.
-					// Por enquanto, vamos simplesmente exibir a imagem na página.
+<script>
+	function acessarCamera() {
+		var captureInput = document.getElementById('captureInput');
+		if (captureInput) {
+			captureInput.click();
+			captureInput.addEventListener('change', function (event) {
+				var imageFile = event.target.files[0];
+				if (imageFile) {
+					// Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
 					var imageElement = document.createElement('img');
-					imageElement.src = canvas.toDataURL('image/jpeg');
+					imageElement.src = URL.createObjectURL(imageFile);
 					document.body.appendChild(imageElement);
-				});
-				})
-				.catch(function (error) {
-				console.error('Erro ao acessar a câmera: ' + error);
-				});
-			} else {
-			console.error('Seu navegador não suporta o acesso à câmera.');
-			}
+				}
+			});
 		}
-	</script>
+	}
+</script>
 
 
 	<script>
