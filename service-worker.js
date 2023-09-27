@@ -13,7 +13,11 @@ self.addEventListener('install', event => {
         './assets/css/layout.css',
 
         './assets/js/script.js',
-        
+
+
+        './assets/img/icon_144.png',
+        './assets/img/icon_192.png',
+        './assets/img/icon_512.png',
         './assets/img/icons-00.png',
         './assets/img/icons-01.png',
         './assets/img/icons-02.png',

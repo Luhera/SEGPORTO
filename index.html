@@ -17,21 +17,31 @@
 	<!-- Importação do arquivo CSS. -->
 	<link rel="stylesheet" type="text/css" href="assets/css/layout.css">
 
-	<link rel="shortcut icon" href="assets/Img/ios/20.png" type="image/x-icon">
+	<link rel="shortcut icon" href="assets/Img/icon-72-72.png" type="image/x-icon">
+	
 
 	<!-- Título da aba do navegador -->
 	<title>SEGPORTO</title>
 
 	<!-- manifest -->
-	<meta name="description" content="SEGPORTO">
+	<meta name="description" content="segporto.netlify">
+
 	<link rel="manifest" href="manifest.json">
 
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="msapplication-TileImage" content="assets/img/ios/144.png">
 	<meta name="msapplication-TileColor" content="##fff8f8">
-	<meta name="theme-color" content="#3a1081" />
+	<meta name="theme-color" content="##31506F" />
+	<link rel="shortcut icon" sizes="192x192" href="assets/img/icon_192.png">
+	<link rel="shortcut icon" sizes="144x144" href="assets/img/icon_144.png">
 
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="PWA Teste">
+	<link rel="apple-touch-icon" href="assets/img/icon_144.png">
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png">
 
+	<link rel="icon" type="image/png" href="assets/img/icon_144.png">
 </head>
 
 <!-- Conteúdo apresentado na tela. -->
@@ -100,37 +110,6 @@
 
 	<!-- Importação do arquivo JavaScript. -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
-
-	<script>
-		// Adicione um ouvinte de evento para o botão "Contatos de Emergência"
-		document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
-			var listaContatos = document.getElementById('lista-contatos');
-			if (listaContatos.style.display === 'none' || listaContatos.style.display === '') {
-				listaContatos.style.display = 'block';
-			} else {
-				listaContatos.style.display = 'none';
-			}
-		});
-	</script>
-
-	<script>
-		function acessarCamera() {
-			var captureInput = document.getElementById('captureInput');
-			if (captureInput) {
-				captureInput.click();
-				captureInput.addEventListener('change', function (event) {
-					var imageFile = event.target.files[0];
-					if (imageFile) {
-						// Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
-						var imageElement = document.createElement('img');
-						imageElement.src = URL.createObjectURL(imageFile);
-						document.body.appendChild(imageElement);
-					}
-				});
-			}
-		}
-	</script>
-
 
 	<script>
 		let newWorker;
