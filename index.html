@@ -93,15 +93,17 @@
 	<script type="text/javascript" src="assets/js/script.js"></script>
 
 
+	
 	<script>
-		function mostrarContatos() {
+		// Adicione um ouvinte de evento para o botão "Contatos de Emergência"
+		document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
 			var listaContatos = document.getElementById('lista-contatos');
 			if (listaContatos.style.display === 'none' || listaContatos.style.display === '') {
 				listaContatos.style.display = 'block';
 			} else {
 				listaContatos.style.display = 'none';
 			}
-		}
+		});
 	</script>
 
 	<script>
