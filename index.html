@@ -5,6 +5,7 @@
 <html lang="pt-br">
 
 <!-- Armazena informações sobre a página. -->
+
 <head>
 
 	<!-- Conjunto de caracteres que contém acentuação e ç. -->
@@ -15,9 +16,9 @@
 
 	<!-- Importação do arquivo CSS. -->
 	<link rel="stylesheet" type="text/css" href="assets/css/layout.css">
-	
+
 	<link rel="shortcut icon" href="assets/Img/ios/20.png" type="image/x-icon">
-	
+
 	<!-- Título da aba do navegador -->
 	<title>SEGPORTO</title>
 
@@ -29,10 +30,11 @@
 </head>
 
 <!-- Conteúdo apresentado na tela. -->
+
 <body>
 	<!-- Agrupa os elementos que compõe o cabeçalho. -->
 	<header class="cabecalho">
-		<img class="cabecalho-imagem" src="assets/Img/Logo (1).png"alt="Logo">
+		<img class="cabecalho-imagem" src="assets/Img/Logo (1).png" alt="Logo">
 		<button id="openMenu">&#x1F515;</button>
 
 		<!-- Agrupa links de navegação no site. -->
@@ -49,20 +51,19 @@
 		<section class="conteudo-principal">
 
 			<div class="conteudo-principal-escrito">
-				<img class="immagem-button" src="assets/Img/icons-00.png" alt="">	
+				<img class="immagem-button" src="assets/Img/icons-00.png" alt="">
 				<button class="button-principal">Rotas de evacuação</button>
 			</div>
 
 			<div class="conteudo-principal-escrito">
 				<input type="file" accept="image/*" capture="camera" id="captureInput" style="display: none;">
 				<img class="immagem-button" src="assets/Img/icons-01.png" alt="">
-				<button class="button-principal"
-				onclick="acessarCamera()">Relatar Incidentes	</button>		
+				<button class="button-principal" onclick="acessarCamera()">Relatar Incidentes </button>
 			</div>
 
 			<div class="conteudo-principal-escrito">
 				<img class="immagem-button" src="assets/Img/icons-02.png" alt="">
-				<button class="button-principal" id="mostrarContatosBtn">Contatos de Emergencia</button>
+				<button class="button-principal" onclick="mostrarContatosBtn()">Contatos de Emergencia</button>
 			</div>
 			<div id="lista-contatos" style="display: none;">
 				<ul>
@@ -80,8 +81,11 @@
 			<div id="map" class="conteudo-mapa">
 				<h3 class="titulo-conteudo-segundario"> Mapa da Região &#128269;</h3>
 
-				<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63153.19971145649!2d-35.015252550747995!3d-8.394286223990628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smapa%20suape!5e0!3m2!1spt-BR!2sbr!4v1695754242591!5m2!1spt-BR!2sbr" width="400" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63153.19971145649!2d-35.015252550747995!3d-8.394286223990628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smapa%20suape!5e0!3m2!1spt-BR!2sbr!4v1695754242591!5m2!1spt-BR!2sbr"
+					width="400" height="320" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 			</div>
 		</section>
 	</main>
@@ -91,55 +95,4 @@
 
 	<!-- Importação do arquivo JavaScript. -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
-
-
-	
-	<script>
-		// Adicione um ouvinte de evento para o botão "Contatos de Emergência"
-		document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
-			var listaContatos = document.getElementById('lista-contatos');
-			if (listaContatos.style.display === 'none' || listaContatos.style.display === '') {
-				listaContatos.style.display = 'block';
-			} else {
-				listaContatos.style.display = 'none';
-			}
-		});
-	</script>
-
-	<script>
-		function acessarCamera() {
-			var captureInput = document.getElementById('captureInput');
-			if (captureInput) {
-				captureInput.click();
-				captureInput.addEventListener('change', function (event) {
-					var imageFile = event.target.files[0];
-					if (imageFile) {
-						// Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
-						var imageElement = document.createElement('img');
-						imageElement.src = URL.createObjectURL(imageFile);
-						document.body.appendChild(imageElement);
-					}
-				});
-			}
-		}
-	</script>
-
-
-	<script>
-    let newWorker;
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').then(reg => {
-        reg.addEventListener('updatefound', () => {
-          newWorker = reg.installing;
-        });
-      });
-      let refreshing;
-      navigator.serviceWorker.addEventListener('controllerchange', function () {
-        if (refreshing) return;
-        window.location.reload();
-        refreshing = true;
-      });
-    }
-  	</script>
-	
 </body>
