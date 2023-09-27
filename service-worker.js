@@ -19,31 +19,31 @@ self.addEventListener('install', event => {
   );
 });
 self.addEventListener('message', function (event) {
-    if (event.data.action === 'skipWaiting') {
-      self.skipWaiting();
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('fetch', function (event) {
+  //Atualizacao internet
+  event.respondWith(async function () {
+    try {
+      return await fetch(event.request);
+    } catch (err) {
+      return caches.match(event.request);
     }
-  });
-  
-  self.addEventListener('fetch', function (event) {
-    //Atualizacao internet
-    event.respondWith(async function () {
-      try {
-        return await fetch(event.request);
-      } catch (err) {
-        return caches.match(event.request);
+  }());
+
+  //Atualizacao cache
+  /*event.respondWith(
+  caches.match(event.request)
+    .then(function (response) {
+      if (response) {
+        return response;
       }
-    }());
+      return fetch(event.request);
+    })
+   );*/
 
-    //Atualizacao cache
-    /*event.respondWith(
-    caches.match(event.request)
-      .then(function (response) {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-     );*/
+});
 
-  });
-  

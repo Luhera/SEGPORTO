@@ -95,4 +95,14 @@
 
 	<!-- Importação do arquivo JavaScript. -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
+
+	<script>
+	document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
+		var listaContatos = document.getElementById('lista-contatos');
+		if (listaContatos.style.display === 'none' || listaContatos.style.display === '') {
+		  listaContatos.style.display = 'block';
+		} else {
+		  listaContatos.style.display = 'none';
+		}
+	  });</script>
 </body>
