@@ -64,6 +64,14 @@
 				<img class="immagem-button" src="assets/Img/icons-02.png" alt="">
 				<button class="button-principal" onclick="ligarParaEmergencia()">Contatos de Emergencia</button>
 			</div>
+			<div id="lista-contatos" style="display: none;">
+				<ul>
+					<li><a href="tel:190">Polícia - 190</a></li>
+					<li><a href="tel:193">Bombeiros - 193</a></li>
+					<li><a href="tel:192">SAMU - 192</a></li>
+					<!-- Adicione mais contatos de emergência, se necessário -->
+				</ul>
+			</div>
 
 		</section>
 
@@ -86,28 +94,33 @@
 
 
 	<script>
-		function ligarParaEmergencia() {
-		  window.location.href = 'tel:190';
+		function mostrarContatos() {
+			var listaContatos = document.getElementById('lista-contatos');
+			if (listaContatos.style.display === 'none' || listaContatos.style.display === '') {
+				listaContatos.style.display = 'block';
+			} else {
+				listaContatos.style.display = 'none';
+			}
 		}
 	</script>
 
-<script>
-	function acessarCamera() {
-		var captureInput = document.getElementById('captureInput');
-		if (captureInput) {
-			captureInput.click();
-			captureInput.addEventListener('change', function (event) {
-				var imageFile = event.target.files[0];
-				if (imageFile) {
-					// Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
-					var imageElement = document.createElement('img');
-					imageElement.src = URL.createObjectURL(imageFile);
-					document.body.appendChild(imageElement);
-				}
-			});
+	<script>
+		function acessarCamera() {
+			var captureInput = document.getElementById('captureInput');
+			if (captureInput) {
+				captureInput.click();
+				captureInput.addEventListener('change', function (event) {
+					var imageFile = event.target.files[0];
+					if (imageFile) {
+						// Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
+						var imageElement = document.createElement('img');
+						imageElement.src = URL.createObjectURL(imageFile);
+						document.body.appendChild(imageElement);
+					}
+				});
+			}
 		}
-	}
-</script>
+	</script>
 
 
 	<script>
