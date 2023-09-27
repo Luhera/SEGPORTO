@@ -9,8 +9,11 @@ self.addEventListener('install', event => {
       .then(cache => cache.addAll([
 
         './index.html',
+
         './assets/css/layout.css',
+
         './assets/js/script.js',
+        
         './assets/img/icons-00.png',
         './assets/img/icons-01.png',
         './assets/img/icons-02.png',
