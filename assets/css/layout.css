@@ -1,28 +1,4 @@
-/* Estilos padrão para a navegação */
-.cabecalho-menu {
-  display: none;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.cabecalho-menu-item {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #391BB0;
-}
-
-/* Estilos para a navegação responsiva em dispositivos pequenos */
-@media screen and (max-width: 768px) {
-  .cabecalho-menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cabecalho-menu-item {
-    margin: 10px 0;
-  }
-}
-
+body{font-family: 'Orienta', sans-serif;}
 /* Estilos para o cabeçalho */
 .cabecalho {
   display: flex;
@@ -80,15 +56,12 @@
   
   
 }
-
 .conteudo-mapa iframe {
   width: 80%; /* Defina a largura do mapa conforme necessário */
   height: auto; /* A altura será ajustada automaticamente para manter a proporção */
   max-width: 600px; /* Defina um valor máximo para a largura do mapa, se desejar */
 
 }
-
-
 /* Estilos para o rodapé */
 footer {
   background-color: #333;

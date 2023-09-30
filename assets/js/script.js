@@ -1,21 +1,3 @@
-// Obtém uma referência para o botão de abrir o menu
-const openMenuButton = document.getElementById('openMenu');
-
-// Obtém uma referência para o menu
-const menu = document.querySelector('.cabecalho-menu');
-
-// Adiciona um ouvinte de evento ao botão para abrir/fechar o menu
-openMenuButton.addEventListener('click', function () {
-  // Verifica se o menu está atualmente visível ou oculto
-  const menuEstaVisivel = getComputedStyle(menu).display !== 'none';
-
-  // Se o menu estiver visível, oculta-o; se estiver oculto, mostra-o
-  if (menuEstaVisivel) {
-    menu.style.display = 'none';
-  } else {
-    menu.style.display = 'block';
-  }
-});
 
 function acessarCamera() {
   var captureInput = document.getElementById('captureInput');
@@ -27,11 +9,14 @@ function acessarCamera() {
         // Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
         var imageElement = document.createElement('img');
         imageElement.src = URL.createObjectURL(imageFile);
-        document.body.appendChild(imageElement);
+        var imagemCapturada = document.getElementById('imagemCapturada');
+        imagemCapturada.innerHTML = ''; // Limpa qualquer imagem anterior
+        imagemCapturada.appendChild(imageElement);
       }
     });
   }
 }
+
 
 	// Adicione um ouvinte de evento para o botão "Contatos de Emergência"
   document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
@@ -42,5 +27,7 @@ function acessarCamera() {
       listaContatos.style.display = 'none';
     }
   });
+
+
 
   

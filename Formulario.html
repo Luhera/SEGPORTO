@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEGPORTO</title>
+    <!-- Importação do arquivo CSS. -->
+    <link rel="stylesheet" type="text/css" href="assets/css/formulario.css">
+
+    <!-- manifest -->
+    <meta name="description" content="segporto.netlify">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileImage" content="assets/img/ios/144.png">
+    <meta name="msapplication-TileColor" content="##fff8f8">
+    <meta name="theme-color" content="##31506F" />
+    <link rel="shortcut icon" sizes="192x192" href="assets/img/icon_192.png">
+    <link rel="shortcut icon" sizes="144x144" href="assets/img/icon_144.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWA Teste">
+    <link rel="apple-touch-icon" href="assets/img/icon_144.png">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orienta&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Img/icon-72-72.png" type="image/x-icon">
+	
+
+    <link rel="icon" type="image/png" href="assets/img/icon_144.png">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <img class="cabecalho-imagem" src="assets/Img/Logo (1).png" alt="Logo">
+    </header>
+
+    <main class="conteudo">
+        <div>
+            <h1 id="titulo">Relato de Incidentes </h1>
+            <p id="subtitulo">Preencha as informações</p>
+            <br>
+        </div>
+
+        <section class="conteudo-principal">
+            <form>
+                <div class="campo">
+                    <label for="nome"><strong>Nome e Sobrenome</strong></label>
+                    <input type="text" name="nome" id="nome" required>
+                </div>
+
+                <button id="askButton">Aperte aqui para salva o local do incidente</button>
+                <div class="target"></div>
+
+                <div class="campo-gravidade">
+                    <label><strong>Nivel da gravidade do perigo </strong></label>
+                    <label>
+                        <input type="radio" name="devweb" value="Frontend" checked>Fraco
+                    </label>
+
+                    <label>
+                        <input type="radio" name="devweb" value="backend">Mediano
+                    </label>
+                    <label>
+                        <input type="radio" name="devweb" value="fullstack">Gravissimo
+                    </label>
+                </div>
+
+                <div class="campo-foto-incidente">
+                    <input type="file" accept="image/*" capture="camera" id="captureInput" style="display: none;">
+                    <button class="button-principal" onclick="acessarCamera()">tirar foto do Incidente</button>
+                </div>
+
+                <div class="campo-descrição">
+                    <br>
+                    <label><strong>Descrição do Incidentes:</strong></label>
+                    <textarea row="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
+                </div>
+
+                <button class="botao" type="submit"><strong>Concluído</strong></button>
+            </form>
+
+
+        </section>
+
+        <section class="conteudo-secundario">
+
+            <div id="foto" class="conteudo-foto">
+                <h3 class="titulo-conteudo-segundario"> Foto do incidente</h3>
+                <div id="imagemCapturada"></div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Importação do arquivo JavaScript. -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+    <script>
+		let newWorker;
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker.register('/service-worker.js').then(reg => {
+			reg.addEventListener('updatefound', () => {
+			  newWorker = reg.installing;
+			});
+		  });
+		  let refreshing;
+		  navigator.serviceWorker.addEventListener('controllerchange', function () {
+			if (refreshing) return;
+			window.location.reload();
+			refreshing = true;
+		  });
+		}
+	  </script>
+
+</body>
+
+</html>

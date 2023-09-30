@@ -9,7 +9,9 @@ self.addEventListener('install', event => {
       .then(cache => cache.addAll([
 
         './index.html',
+        './Formulario.html',
 
+        './assets/css/formulario.css',
         './assets/css/layout.css',
 
         './assets/js/script.js',
