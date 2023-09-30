@@ -6,16 +6,19 @@ function acessarCamera() {
     captureInput.addEventListener('change', function (event) {
       var imageFile = event.target.files[0];
       if (imageFile) {
-        // Agora você pode fazer algo com a imagem, como exibi-la na página ou enviá-la para um servidor.
         var imageElement = document.createElement('img');
         imageElement.src = URL.createObjectURL(imageFile);
         var imagemCapturada = document.getElementById('imagemCapturada');
         imagemCapturada.innerHTML = ''; // Limpa qualquer imagem anterior
         imagemCapturada.appendChild(imageElement);
+
+        // Adicione um estilo máximo de largura para a imagem
+        imageElement.style.maxWidth = '100%';
       }
     });
   }
 }
+
 	// Adicione um ouvinte de evento para o botão "Contatos de Emergência"
   document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
     var listaContatos = document.getElementById('lista-contatos');

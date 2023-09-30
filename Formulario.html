@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orienta&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/Img/icon-72-72.png" type="image/x-icon">
-	
+
 
     <link rel="icon" type="image/png" href="assets/img/icon_144.png">
 </head>
@@ -53,9 +53,11 @@
                     <label for="nome"><strong>Nome e Sobrenome</strong></label>
                     <input type="text" name="nome" id="nome" required>
                 </div>
-
-                <button id="askButton">Aperte aqui para salva o local do incidente</button>
-                <div class="target"></div>
+                
+                <div class="campo-horario">
+                    <label for="horario"><strong>Horário da Ocorrência</strong></label>
+                    <input type="time" name="horario" id="horario" required>
+                </div>
 
                 <div class="campo-gravidade">
                     <label><strong>Nivel da gravidade do perigo </strong></label>
@@ -82,6 +84,8 @@
                     <textarea row="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
                 </div>
 
+                <button id="askButton">Aperte aqui para salva o local do incidente</button>
+                <div class="target"></div>
                 <button class="botao" type="submit"><strong>Concluído</strong></button>
             </form>
 
@@ -102,21 +106,21 @@
     <script type="text/javascript" src="assets/js/script.js"></script>
 
     <script>
-		let newWorker;
-		if ('serviceWorker' in navigator) {
-		  navigator.serviceWorker.register('/service-worker.js').then(reg => {
-			reg.addEventListener('updatefound', () => {
-			  newWorker = reg.installing;
-			});
-		  });
-		  let refreshing;
-		  navigator.serviceWorker.addEventListener('controllerchange', function () {
-			if (refreshing) return;
-			window.location.reload();
-			refreshing = true;
-		  });
-		}
-	  </script>
+        let newWorker;
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+                    newWorker = reg.installing;
+                });
+            });
+            let refreshing;
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+                if (refreshing) return;
+                window.location.reload();
+                refreshing = true;
+            });
+        }
+    </script>
 
 </body>
 

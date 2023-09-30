@@ -56,8 +56,14 @@
   }
   
   /* Estilo para campos e botões */
-  .campo {
-    margin-bottom: 20px;
+  .campo-horario{
+    margin-top: 30px;
+  }
+  .campo-gravidade{
+    margin-top: 40px;
+  }
+  .campo-foto-incidente{
+    margin-top: 40px;
   }
   
   label {
@@ -87,6 +93,7 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     height: 100%; /* Adicione a altura desejada */
+    max-height: 200px;
   }
   
   button {
