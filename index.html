@@ -70,18 +70,18 @@
 				<img class="immagem-button" src="assets/Img/icons-01.png" alt="">
 				<a href="Formulario.html"><button id="redirecionarButton" class="button-principal">Relatar Incidentes</button></a>
 			</div>
-			
 
-			<div class="conteudo-principal-escrito">
+
+			<div id= "lista-contatos-emergencia" class="conteudo-principal-escrito"style="display: none;">
 				<img class="immagem-button" src="assets/Img/icons-02.png" alt="">
-				<button class="button-principal" id="mostrarContatosBtn">Contatos de Emergencia</button>
+				<button class="button-principal" id="mostrarContatosBtn"><ul>
+					<li class="Numero-tel"><a href="tel:193">Bombeiros - 193</a></li>
+					<li class="Numero-tel"><a href="tel:192">SAMU - 192</a></li>
+					<!-- Adicione mais contatos de emergência, se necessário -->
+				</ul></button>
 			</div>
 			<div id="lista-contatos" style="display: none;">
-				<ul>
-					<li><a href="tel:193">Bombeiros - 193</a></li>
-					<li><a href="tel:192">SAMU - 192</a></li>
-					<!-- Adicione mais contatos de emergência, se necessário -->
-				</ul>
+				
 			</div>
 
 		</section>
@@ -100,8 +100,24 @@
 		</section>
 	</main>
 
+
+	<button id="botao-contato-emergencia">&#128222; Contato de Emergência</button> <!-- Adicione o ícone que desejar -->
+
+
 	<!-- Importação do arquivo JavaScript. -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
+	
+	<script>
+        document.getElementById('botao-contato-emergencia').addEventListener('click', function () {
+            var listaContatosEmergencia = document.getElementById('lista-contatos-emergencia');
+            if (listaContatosEmergencia.style.display === 'none' || listaContatosEmergencia.style.display === '') {
+                listaContatosEmergencia.style.display = 'block';
+            } else {
+                listaContatosEmergencia.style.display = 'none';
+            }
+        });
+    </script>
+	
 
 	
 	<script>

@@ -29,6 +29,8 @@ function acessarCamera() {
     }
   });
 
+  //function para localização
+
   var askButton = document.getElementById('askButton');
   var target = document.getElementById('target');
   
@@ -49,6 +51,7 @@ function acessarCamera() {
       target.innerText = 'Geolocation API não suportada.';
     }
   });
+  
   
 
   

@@ -22,6 +22,16 @@ body{font-family: 'Orienta', sans-serif;}
   padding: 20px;
 }
 
+/* Estilo para os itens da lista */
+#lista-contatos-emergencia ul li a {
+  margin: 5px 0;
+  font-weight: bold; /* Deixa o texto em negrito */
+  text-decoration: none; /* Remove a formatação de link */
+  color: #fdfdfd; /* Cor do texto */
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0;
+}
+
 .conteudo-principal {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +52,30 @@ body{font-family: 'Orienta', sans-serif;}
   cursor: pointer;
   border-radius: 5px
 }
+
+/* Estilo para o botão de contato de emergência flutuante */
+#botao-contato-emergencia {
+  position: fixed;
+  bottom: 20px; /* Ajuste a posição vertical conforme necessário */
+  right: 20px; /* Ajuste a posição horizontal conforme necessário */
+  background-color: #391BB0; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none;
+  border-radius: 50%; /* Isso cria um botão circular */
+  width: 60px; /* Largura do botão */
+  height: 60px; /* Altura do botão */
+  font-size: 20px; /* Tamanho do texto do botão */
+  text-align: center;
+  line-height: 60px; /* Centralizar verticalmente o texto */
+  cursor: pointer;
+  z-index: 1000; /* Certifique-se de que o botão flutue sobre outros elementos */
+}
+
+#botao-contato-emergencia:hover {
+  background-color: #391; /* Cor de fundo do botão ao passar o mouse */
+}
+
+
 .titulo-conteudo-segundario{
   color:rgb(9, 9, 9);
   font-size: 15px;
