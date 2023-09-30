@@ -16,8 +16,6 @@ function acessarCamera() {
     });
   }
 }
-
-
 	// Adicione um ouvinte de evento para o botão "Contatos de Emergência"
   document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
     var listaContatos = document.getElementById('lista-contatos');
@@ -28,6 +26,26 @@ function acessarCamera() {
     }
   });
 
-
+  var askButton = document.getElementById('askButton');
+  var target = document.getElementById('target');
+  
+  function appendLocation(location) {
+    var newLocation = document.createElement('p');
+    newLocation.innerHTML = 'Latitude: ' + location.coords.latitude + ', Longitude: ' + location.coords.longitude;
+    target.appendChild(newLocation);
+  }
+  
+  askButton.addEventListener('click', function () {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(function (location) {
+        appendLocation(location);
+      }, function (error) {
+        console.error('Erro ao obter a localização: ' + error.message);
+      });
+    } else {
+      target.innerText = 'Geolocation API não suportada.';
+    }
+  });
+  
 
   
