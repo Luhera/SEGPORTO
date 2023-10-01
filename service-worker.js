@@ -15,7 +15,13 @@ self.addEventListener('install', event => {
         './assets/css/layout.css',
 
         './assets/js/script.js',
-        './assets/js/script-formulario.js'
+        './assets/js/script-formulario.js',
+
+        './assets/img/icons-00.png',
+        './assets/img/icons-01.png',
+        './assets/img/icons-02.png',
+        './assets/img/Logo(1).png'
+        
       ]))
   );
 });
