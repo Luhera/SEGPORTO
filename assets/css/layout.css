@@ -53,26 +53,37 @@ body{font-family: 'Orienta', sans-serif;}
   border-radius: 5px
 }
 
-/* Estilo para o botão de contato de emergência flutuante */
-#botao-contato-emergencia {
+.button-flutuante-direito {
   position: fixed;
-  bottom: 20px; /* Ajuste a posição vertical conforme necessário */
-  right: 20px; /* Ajuste a posição horizontal conforme necessário */
+  bottom: 20px;
+  right: 20px;
   background-color: #391BB0; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
+  color: #fff; /* Cor do texto */
   border: none;
-  border-radius: 50%; /* Isso cria um botão circular */
-  width: 60px; /* Largura do botão */
-  height: 60px; /* Altura do botão */
-  font-size: 20px; /* Tamanho do texto do botão */
+  border-radius: 50%; /* Formato circular do botão */
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
   text-align: center;
-  line-height: 60px; /* Centralizar verticalmente o texto */
+  line-height: 60px; /* Centraliza verticalmente o ícone */
   cursor: pointer;
-  z-index: 1000; /* Certifique-se de que o botão flutue sobre outros elementos */
 }
 
-#botao-contato-emergencia:hover {
-  background-color: #391; /* Cor de fundo do botão ao passar o mouse */
+
+.button-flutuante-esquerdo {
+  position: fixed;
+  bottom: 20px;
+  left:  20px;
+  background-color: #391BB0; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  border: none;
+  border-radius: 50%; /* Formato circular do botão */
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 60px; /* Centraliza verticalmente o ícone */
+  cursor: pointer;
 }
 
 
