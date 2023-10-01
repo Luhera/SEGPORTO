@@ -43,24 +43,28 @@ document.getElementById('mostrarContatosBtn').addEventListener('click', function
   }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Seu código JavaScript aqui
+  var target = document.getElementById('target');
+  var watchId;
 
-var target = document.getElementById('target');
-var watchId;
+  function appendLocation(location, verb) {
+    verb = verb || 'updated';
+    var newLocation = document.createElement('p');
+    newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+    target.appendChild(newLocation);
+  }
 
-function appendLocation(location, verb) {
-  verb = verb || 'updated';
-  var newLocation = document.createElement('p');
-  newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
-  target.appendChild(newLocation);
-}
-
-if ('geolocation' in navigator) {
-  document.getElementById('askButton').addEventListener('click', function () {
-    navigator.geolocation.getCurrentPosition(function (location) {
-      appendLocation(location, 'fetched');
+  if ('geolocation' in navigator) {
+    document.getElementById('askButton').addEventListener('click', function () {
+      navigator.geolocation.getCurrentPosition(function (location) {
+        appendLocation(location, 'fetched');
+      });
+      watchId = navigator.geolocation.watchPosition(appendLocation);
     });
-    watchId = navigator.geolocation.watchPosition(appendLocation);
-  });
-} else {
-  target.innerText = 'Geolocation API not supported.';
-}
+  } else {
+    target.innerText = 'Geolocation API not supported.';
+  }
+});
+
+
