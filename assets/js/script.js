@@ -45,43 +45,24 @@ document.getElementById('mostrarContatosBtn').addEventListener('click', function
   }
 });
 
+var target = document.getElementById('target');
+var watchId;
 
-const userLocation = document.getElementById("userLocation");
-const getLocationButton = document.getElementById("getLocationButton");
-
-// Função para obter a localização do usuário
-function getUserLocation() {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        userLocation.textContent = `Sua localização: Latitude ${latitude}, Longitude ${longitude}`;
-      },
-      (error) => {
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            userLocation.textContent =
-              "O usuário não permitiu o acesso à sua localização.";
-            break;
-          case error.POSITION_UNAVAILABLE:
-            userLocation.textContent =
-              "As informações de localização não estão disponíveis.";
-            break;
-          case error.TIMEOUT:
-            userLocation.textContent =
-              "A solicitação de localização do usuário expirou.";
-            break;
-          default:
-            userLocation.textContent =
-              "Não foi possível obter a localização do usuário.";
-        }
-      }
-    );
-  } else {
-    userLocation.textContent = "A geolocalização não é suportada neste navegador.";
-  }
+function appendLocation(location, verb) {
+  verb = verb || 'updated';
+  var newLocation = document.createElement('p');
+  newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+  target.appendChild(newLocation);
 }
 
-// Adicione um ouvinte de evento para o botão
-getLocationButton.addEventListener("click", getUserLocation);
+if ('geolocation' in navigator) {
+  document.getElementById('askButton').addEventListener('click', function () {
+    navigator.geolocation.getCurrentPosition(function (location) {
+      appendLocation(location, 'fetched');
+    });
+    watchId = navigator.geolocation.watchPosition(appendLocation);
+  });
+} else {
+  target.innerText = 'Geolocation API not supported.';}
+  navigator.geolocation.getCurrentPosition(callback)
+  navigator.geolocation.watchPosition(callback)
