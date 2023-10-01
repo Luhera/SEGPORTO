@@ -33,6 +33,23 @@
     padding: 20px;
   }
   
+  /* Estilos para o botão Home no cabeçalho */
+.botao-home {
+  background-color: #31506F; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Adiciona cantos arredondados */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Altera o cursor ao passar o mouse */
+  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+.botao-home:hover {
+  background-color: #21415F; /* Cor de fundo quando hover (passar o mouse) */
+}
+
+
   #titulo {
     font-size: 24px;
     text-align: center;
