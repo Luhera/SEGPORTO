@@ -45,42 +45,26 @@ document.addEventListener('DOMContentLoaded', function () {
       listaContatos.style.display = 'none';
     }
   });
+// Verifique se o navegador suporta a Geolocalização
+if ("geolocation" in navigator) {
+  const userLocation = document.getElementById("userLocation");
+  const localizacaoButton = document.getElementById("localizacaoButton");
 
-
-// Função para salvar a localização do usuário
-function salvarLocalizacao() {
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(function (position) {
+  // Adicione um evento de clique ao botão
+  localizacaoButton.addEventListener("click", () => {
+    navigator.geolocation.getCurrentPosition((position) => {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      const localizacao = `Latitude: ${latitude}, Longitude: ${longitude}`;
 
-      // Exiba a localização na página ou faça o que desejar com ela.
-      const targetElement = document.querySelector(".target");
-      targetElement.textContent = "Localização Salva: " + localizacao;
-
-      // Adicione a localização a um campo de formulário oculto
-      const localizacaoInput = document.createElement("input");
-      localizacaoInput.type = "hidden";
-      localizacaoInput.name = "localizacao";
-      localizacaoInput.value = localizacao;
-
-      // Anexe o campo de localização ao formulário
-      const form = document.querySelector("form");
-      form.appendChild(localizacaoInput);
+      // Exiba a localização no elemento <p>
+      userLocation.textContent = `Sua localização: Latitude ${latitude}, Longitude ${longitude}`;
+    }, (error) => {
+      userLocation.textContent = "Não foi possível obter a localização.";
+      console.error(error);
     });
-  } else {
-    alert("A geolocalização não é suportada neste navegador.");
-  }
-}
-
-// Encontre o botão que acionará a função salvarLocalizacao
-const askButton = document.getElementById("askButton");
-
-// Adicione um ouvinte de evento de clique ao botão
-if (askButton) {
-  askButton.addEventListener("click", function (event) {
-    event.preventDefault(); // Evita o envio do formulário
-    salvarLocalizacao(); // Chama a função para salvar a localização
   });
+} else {
+  console.log("Geolocalização não é suportada pelo seu navegador.");
 }
+
+

@@ -48,6 +48,22 @@
 .botao-home:hover {
   background-color: #21415F; /* Cor de fundo quando hover (passar o mouse) */
 }
+/* Estilos para o botão de localização */
+#localizacaoButton {
+  background-color: #31506F;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Espaço entre o botão e o formulário */
+  transition: background-color 0.3s ease;
+}
+
+#localizacaoButton:hover {
+  background-color: #21415F;
+}
 
 
   #titulo {
