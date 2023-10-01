@@ -64,5 +64,3 @@ if ('geolocation' in navigator) {
   });
 } else {
   target.innerText = 'Geolocation API not supported.';}
-  navigator.geolocation.getCurrentPosition(callback)
-  navigator.geolocation.watchPosition(callback)
