@@ -15,7 +15,7 @@ self.addEventListener('install', event => {
         './assets/css/layout.css',
 
         './assets/js/script.js',
-        
+        './assets/js/script-formulario.js'
       ]))
   );
 });
