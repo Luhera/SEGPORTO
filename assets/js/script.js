@@ -43,27 +43,25 @@ document.getElementById('mostrarContatosBtn').addEventListener('click', function
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Seu código JavaScript aqui
-  var target = document.getElementById('target');
-  var watchId;
+var target = document.getElementById('target');
 
-  function appendLocation(location, verb) {
-    verb = verb || 'updated';
-    var newLocation = document.createElement('p');
-    newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
-    target.appendChild(newLocation);
-  }
+function appendLocation(location) {
+  var newLocation = document.createElement('p');
+  newLocation.textContent = 'Localização capturada: Latitude ' + location.coords.latitude + ', Longitude ' + location.coords.longitude + '';
+  target.appendChild(newLocation);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const askButton = document.getElementById('askButton');
 
   if ('geolocation' in navigator) {
-    document.getElementById('askButton').addEventListener('click', function () {
+    askButton.addEventListener('click', function () {
       navigator.geolocation.getCurrentPosition(function (location) {
-        appendLocation(location, 'fetched');
+        appendLocation(location);
       });
-      watchId = navigator.geolocation.watchPosition(appendLocation);
     });
   } else {
-    target.innerText = 'Geolocation API not supported.';
+    target.textContent = 'API de Geolocalização não suportada.';
   }
 });
 
