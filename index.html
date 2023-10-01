@@ -11,9 +11,6 @@
 	<!-- Conjunto de caracteres que contém acentuação e ç. -->
 	<meta charset="utf-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-
 	<!-- Configuração da janela de visualização ( responsividade ). -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -97,19 +94,10 @@
 	<!-- Importação do arquivo JavaScript. -->
 	<script type="text/javascript" src="assets/js/script.js"></script>
 	
-	<script>
-        document.getElementById('botao-contato-emergencia').addEventListener('click', function () {
-            var listaContatosEmergencia = document.getElementById('lista-contatos-emergencia');
-            if (listaContatosEmergencia.style.display === 'none' || listaContatosEmergencia.style.display === '') {
-                listaContatosEmergencia.style.display = 'block';
-            } else {
-                listaContatosEmergencia.style.display = 'none';
-            }
-        });
-    </script>
-	
+	<script async
+    src="https://maps.googleapis.com/maps/api/js?AIzaSyBXwK7wR-s1iAsZlxzrL3utNgCfU4X1CfkY&callback=initMap">
+	</script>
 
-	
 	<script>
 		let newWorker;
 		if ('serviceWorker' in navigator) {

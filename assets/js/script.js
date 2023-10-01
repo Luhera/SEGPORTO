@@ -8,4 +8,3 @@ document.getElementById('mostrarContatosBtn').addEventListener('click', function
     listaContatos.style.display = 'none';
   }
 });
-

@@ -92,6 +92,9 @@ body{font-family: 'Orienta', sans-serif;}
   font-size: 15px;
 }
 
+#mapa{
+  height: 100%;
+}
 .conteudo-mapa {
   display: flex;
   flex-direction: column;
@@ -101,19 +104,11 @@ body{font-family: 'Orienta', sans-serif;}
   
   
 }
-.conteudo-mapa iframe {
+/*.conteudo-mapa iframe {
   width: 80%; /* Defina a largura do mapa conforme necessário */
-  height: auto; /* A altura será ajustada automaticamente para manter a proporção */
-  max-width: 600px; /* Defina um valor máximo para a largura do mapa, se desejar */
+ /* height: auto; *//* A altura será ajustada automaticamente para manter a proporção */
+  /*max-width: 600px;*/ /* Defina um valor máximo para a largura do mapa, se desejar */
 
-}
-/* Estilos para o rodapé */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-}
 
 /* Estilos para a classe immagem-button */
 .immagem-button {
