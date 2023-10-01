@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-
-
 // Adicione um ouvinte de evento para o botão "Contatos de Emergência"
 document.getElementById('mostrarContatosBtn').addEventListener('click', function () {
   var listaContatos = document.getElementById('lista-contatos');
@@ -44,6 +42,7 @@ document.getElementById('mostrarContatosBtn').addEventListener('click', function
     listaContatos.style.display = 'none';
   }
 });
+
 
 var target = document.getElementById('target');
 var watchId;
@@ -63,4 +62,5 @@ if ('geolocation' in navigator) {
     watchId = navigator.geolocation.watchPosition(appendLocation);
   });
 } else {
-  target.innerText = 'Geolocation API not supported.';}
+  target.innerText = 'Geolocation API not supported.';
+}
