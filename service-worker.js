@@ -10,18 +10,36 @@ self.addEventListener('install', event => {
 
         './index.html',
         './Formulario.html',
+        './acompanhar-incidentes.html',
 
         './assets/css/formulario.css',
         './assets/css/layout.css',
+        './assets/css/incidentes.css',
 
+        './formulario.json',
         './assets/js/script.js',
         './assets/js/script-formulario.js',
 
-        './assets/img/icons-00.png',
-        './assets/img/icons-01.png',
-        './assets/img/icons-02.png',
-        './assets/img/Logo(1).png'
-        
+        './assets/img/incidentes/img-01.jpg',
+        './assets/img/incidentes/img-02.jpg',
+        './assets/img/incidentes/img-03.jpg',
+        './assets/img/incidentes/img-04.jpg',
+        './assets/img/incidentes/img-05.jpg',
+        './assets/img/incidentes/img-06.jpg',
+        './assets/img/incidentes/img-07.jpg',
+
+        './assets/img/icon-48-48.png',
+        './assets/img/icon-72-72.png',
+        './assets/img/icon-96-96.png',
+        './assets/img/icon-144-144.png',
+        './assets/img/icon-192-192.png',
+        './assets/img/icon-512-512.png',
+
+        './assets/img/icons-00.webp',
+        './assets/img/icons-01.webp',
+        './assets/img/icons-02.webp',
+        './assets/img/icons-03.webp',
+        './assets/img/Logo-1.webp'
       ]))
   );
 });
