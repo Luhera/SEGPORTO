@@ -33,7 +33,7 @@ var target = document.getElementById('target');
 
 function appendLocation(location) {
     var newLocation = document.createElement('p');
-    newLocation.textContent = 'Localização capturada: Latitude ' + location.coords.latitude + ', Longitude ' + location.coords.longitude + '';
+    newLocation.textContent = 'Localização capturada!';
     target.appendChild(newLocation);
 }
 
