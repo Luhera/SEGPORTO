@@ -1,0 +1,106 @@
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "localizacaoDoIncidente": {
+            "longitude": -45.6789,
+            "latitude": 1234.56
+        },
+        "nome": "Anderson Lucena",
+        "Horario": "16:20",
+        "Nivel da Gravidade": "Fraco",
+        "Foto do incidente": "assets/img/incidentes/img-07.jpg",
+        "Descrição do incidente": "Ocorreu um pequeno incidente na área de trabalho. Nada grave."
+    }
+    
+    ,
+
+    {
+        "userId": 2,
+        "id": 2,
+        "localizacaoDoIncidente": {
+            "longitude": -40.1234,
+            "latitude": 987.65
+        },
+        "nome": "Maria Silva",
+        "Horario": "10:45",
+        "Nivel da Gravidade": "Moderado",
+        "Foto do incidente": "assets/img/incidentes/img-06.jpg",
+        "Descrição do incidente": "Um incidente moderado ocorreu na sala de reuniões pela manhã."
+    }
+    ,
+
+    {
+        "userId": 3,
+        "id": 3,
+        "localizacaoDoIncidente": {
+            "longitude": -35.4321,
+            "latitude": 543.21
+        },
+        "nome": "João Pereira",
+        "Horario": "14:30",
+        "Nivel da Gravidade": "Fraco",
+        "Foto do incidente": "assets/img/incidentes/img-05.jpg",
+        "Descrição do incidente": "Houve um pequeno incidente na área de estacionamento durante a tarde."
+    }
+    ,
+
+    {
+        "userId": 4,
+        "id": 4,
+        "localizacaoDoIncidente": {
+            "longitude": -55.9876,
+            "latitude": 876.54
+        },
+        "nome": "Ana Souza",
+        "Horario": "09:15",
+        "Nivel da Gravidade": "Grave",
+        "Foto do incidente": "assets/img/incidentes/img-04.jpg",
+        "Descrição do incidente": "Um incidente grave ocorreu no canteiro de obras de manhã."
+    }
+    ,
+
+    {
+        "userId": 5,
+        "id": 5,
+        "localizacaoDoIncidente": {
+            "longitude": -30.7654,
+            "latitude": 765.43
+        },
+        "nome": "Pedro Santos",
+        "Horario": "18:00",
+        "Nivel da Gravidade": "Moderado",
+        "Foto do incidente": "assets/img/incidentes/img-03.jpg",
+        "Descrição do incidente": "Um incidente moderado ocorreu na fábrica à noite."
+    }
+    ,
+
+    {
+        "userId": 6,
+        "id": 6,
+        "localizacaoDoIncidente": {
+            "longitude": -25.8765,
+            "latitude": 654.32
+        },
+        "nome": "Lúcia Oliveira",
+        "Horario": "12:55",
+        "Nivel da Gravidade": "Fraco",
+        "Foto do incidente": "assets/img/incidentes/img-02.jpg",
+        "Descrição do incidente": "Durante o almoço, ocorreu um pequeno incidente na cantina."
+    },
+
+    {
+        "userId": 7,
+        "id": 7,
+        "localizacaoDoIncidente": {
+            "longitude": -20.1234,
+            "latitude": 432.10
+        },
+        "nome": "Ricardo Mendes",
+        "Horario": "17:10",
+        "Nivel da Gravidade": "Grave",
+        "Foto do incidente": "assets/img/incidentes/img-01.jpg",
+        "Descrição do incidente": "Um incidente grave ocorreu na sala de máquinas à tarde."
+    }
+    
+]

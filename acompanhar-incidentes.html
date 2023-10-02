@@ -1,0 +1,113 @@
+<!-- Indica que o documento é um arquivo HTML. -->
+<!DOCTYPE html>
+
+<!-- Define a linguagem do conteúdo da página. -->
+<html lang="pt-br">
+
+<!-- Armazena informações sobre a página. -->
+
+<head>
+
+    <!-- Conjunto de caracteres que contém acentuação e ç. -->
+    <meta charset="utf-8">
+
+    <!-- Configuração da janela de visualização ( responsividade ). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importação do arquivo CSS. -->
+    <link rel="stylesheet" type="text/css" href="assets/css/formulario.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/incidentes.css">
+
+    <link rel="shortcut icon" href="assets/Img/icon-72-72.png" type="image/x-icon">
+
+
+    <!-- Título da aba do navegador -->
+    <title>SEGPORTO</title>
+
+    <!-- manifest -->
+    <meta name="description" content="segporto.netlify">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileImage" content="assets/img/ios/144.png">
+    <meta name="msapplication-TileColor" content="##fff8f8">
+    <meta name="theme-color" content="##31506F" />
+    <link rel="shortcut icon" sizes="192x192" href="assets/img/icon_192.png">
+    <link rel="shortcut icon" sizes="144x144" href="assets/img/icon_144.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWA Teste">
+    <link rel="apple-touch-icon" href="assets/img/icon_144.png">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orienta&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="assets/img/icon_144.png">
+</head>
+
+<!-- Conteúdo apresentado na tela. -->
+
+<body>
+    <!-- Agrupa os elementos que compõe o cabeçalho. -->
+    <header class="cabecalho">
+        <img class="cabecalho-imagem" src="assets/Img/Logo (1).webp" alt="Logo">
+        <a href="index.html"><button class="botao-home">Home</button></a>
+    </header>
+    <!-- Agrupa o conteúdo principal da página ou aplicação. -->
+    <main class="conteudo">
+        <section>
+            <h1>Lista de Incidente</h1>
+            <ul id="listaIncidentes"></ul>
+        </section>
+    </main>
+
+    <!-- Importação do arquivo JavaScript. -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const listaIncidentes = document.getElementById('listaIncidentes');
+          
+            fetch('./formulario.json')
+              .then(res => res.json())
+              .then(formulario => {
+                formulario.forEach(post => {
+                  // Use a tag <img> para exibir a imagem
+                  listaIncidentes.insertAdjacentHTML('beforeend', `
+                    <li>
+                      <p>${post.nome}</p>
+                      <p>${post.Horario}</p>
+                      <p>${post['Nivel da Gravidade']}</p>
+                      <img src="${post['Foto do incidente']}" alt="Imagem do Incidente">
+                      <p>${post['Descrição do incidente']}</p>
+                      <!-- Adicione um parágrafo para exibir a localização -->
+                      <p>Latitude: ${post.localizacaoDoIncidente.latitude}</p>
+                      <p>Longitude: ${post.localizacaoDoIncidente.longitude}</p>
+                    </li>
+                  `);
+                });
+              });
+        });
+    </script>
+    
+    <script>
+        let newWorker;
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').then(reg => {
+                reg.addEventListener('updatefound', () => {
+                    newWorker = reg.installing;
+                });
+            });
+            let refreshing;
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+                if (refreshing) return;
+                window.location.reload();
+                refreshing = true;
+            });
+        }
+    </script>
+
+</body>

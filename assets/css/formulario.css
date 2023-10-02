@@ -1,10 +1,10 @@
-/* Reset de margens e padding para garantir uma base consistente */
-* {
+  /* Reset de margens e padding para garantir uma base consistente */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   /* Estilos globais */
   body {
     font-family: 'Orienta', sans-serif;
@@ -15,55 +15,67 @@
     margin: 0;
     padding: 0;
   }
-  
+
   /* Estilo para o cabeçalho */
   .cabecalho {
     text-align: center;
     background-color: #ebedf0;
     padding: 20px 0;
   }
-  
+
   .cabecalho-imagem {
     max-width: 100%;
     height: auto;
   }
-  
+
   /* Estilo para o conteúdo principal */
   .conteudo {
     padding: 20px;
   }
-  
+
   /* Estilos para o botão Home no cabeçalho */
-.botao-home {
-  background-color: #31506F; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto */
-  border: none; /* Remove a borda */
-  border-radius: 5px; /* Adiciona cantos arredondados */
-  padding: 10px 20px; /* Espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
-  cursor: pointer; /* Altera o cursor ao passar o mouse */
-  transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
-}
+  .botao-home {
+    background-color: #31506F;
+    /* Cor de fundo do botão */
+    color: #fff;
+    /* Cor do texto */
+    border: none;
+    /* Remove a borda */
+    border-radius: 5px;
+    /* Adiciona cantos arredondados */
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    cursor: pointer;
+    /* Altera o cursor ao passar o mouse */
+    transition: background-color 0.3s ease;
+    /* Transição suave de cor de fundo */
+  }
 
-.botao-home:hover {
-  background-color: #21415F; /* Cor de fundo quando hover (passar o mouse) */
-}
-/* Estilos para o botão de localização */
-#localizacaoButton {
-  background-color: #31506F;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 20px; /* Espaço entre o botão e o formulário */
-  transition: background-color 0.3s ease;
-}
+  .botao-home:hover {
+    background-color: #21415F;
+    /* Cor de fundo quando hover (passar o mouse) */
+  }
 
-#localizacaoButton:hover {
-  background-color: #21415F;
-}
+  /* Estilos para o botão de localização */
+  #localizacaoButton {
+    background-color: #31506F;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    /* Espaço entre o botão e o formulário */
+    transition: background-color 0.3s ease;
+  }
+
+  #localizacaoButton:hover {
+    background-color: #21415F;
+  }
+
 
 
   #titulo {
@@ -72,14 +84,14 @@
     margin-top: 20px;
     color: #333;
   }
-  
+
   #subtitulo {
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
     color: #666;
   }
-  
+
   /* Estilo para o formulário */
   form {
     background-color: #fff;
@@ -87,28 +99,31 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
-  
+
   /* Estilo para campos e botões */
-  .campo-horario{
+  .campo-horario {
     margin-top: 30px;
   }
-  .campo-gravidade{
+
+  .campo-gravidade {
     margin-top: 40px;
   }
-  .campo-foto-incidente{
+
+  .campo-foto-incidente {
     margin-top: 40px;
   }
-  
+
   label {
     font-weight: bold;
     display: block;
   }
-  .campo-gravidade label{
+
+  .campo-gravidade label {
     display: inline-block;
     margin-right: 20px;
     vertical-align: middle;
   }
-  
+
   input[type="text"],
   textarea {
     width: 100%;
@@ -116,19 +131,21 @@
     border: 1px solid #ddd;
     border-radius: 5px;
   }
-  input[type="radio"]{
+
+  input[type="radio"] {
     vertical-align: middle;
   }
-  
+
   .campo-descrição textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    height: 100%; /* Adicione a altura desejada */
+    height: 100%;
+    /* Adicione a altura desejada */
     max-height: 200px;
   }
-  
+
   button {
     display: block;
     width: 100%;
@@ -140,11 +157,11 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   button:hover {
     background-color: #1f364f;
   }
-  
+
   /* Estilo para a div de destino (onde a localização será exibida) */
   .target {
     margin-top: 20px;
@@ -154,19 +171,19 @@
     border-radius: 5px;
     text-align: center;
   }
-  
+
   /* Estilo para a seção de foto */
   .conteudo-secundario {
     text-align: center;
   }
-  
+
   .titulo-conteudo-segundario {
     font-size: 20px;
     margin-top: 20px;
     color: #333;
   }
+
   #imagemCapturada {
     max-width: 100%;
     margin: 0 auto;
   }
-  
